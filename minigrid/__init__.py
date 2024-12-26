@@ -147,9 +147,21 @@ def register_minigrid_envs():
     )
 
     register(
+        id="MiniGrid-Dynamic-Obstacles-Random-8x8-v0",
+        entry_point="minigrid.envs:DynamicObstaclesEnv",
+        kwargs={"agent_start_pos": None}
+    )
+
+    register(
         id="MiniGrid-Dynamic-Obstacles-16x16-v0",
         entry_point="minigrid.envs:DynamicObstaclesEnv",
         kwargs={"size": 16, "n_obstacles": 8},
+    )
+
+    register(
+        id="MiniGrid-Dynamic-Obstacles-Random-16x16-v0",
+        entry_point="minigrid.envs:DynamicObstaclesEnv",
+        kwargs={"size": 16, "agent_start_pos": None, "n_obstacles": 8},
     )
 
     # Empty
@@ -188,6 +200,12 @@ def register_minigrid_envs():
         id="MiniGrid-Empty-16x16-v0",
         entry_point="minigrid.envs:EmptyEnv",
         kwargs={"size": 16},
+    )
+
+    register(
+        id="MiniGrid-Empty-Random-16x16-v0",
+        entry_point="minigrid.envs:EmptyEnv",
+        kwargs={"size": 16, "agent_start_pos": None},
     )
 
     # Fetch
